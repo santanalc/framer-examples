@@ -1,25 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Button } from "@chakra-ui/react";
+import React, { useEffect } from "react";
+import { AccordionArray } from "./components/Accordion";
+import { motion } from "framer-motion";
+import GlobalStyles from "./styles/global";
+import { Main, Section, Sticky } from "./styles";
+import FirstAndSecond from "./components/FirstAndSecond";
 
+// eslint-disable-next-line no-lone-blocks
+{
+  /* <Box
+mt={100}
+display="flex"
+flexDirection="column"
+justifyContent="center"
+alignItems="center"
+width="100vw"
+>
+<AccordionArray />
+</Box> */
+}
+
+// const MotionBox = motion.custom(Box);
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Main style={{ height: "1610vh", width: "100vw" }}>
+        <Section style={{ height: "72.7%" }}>
+          <FirstAndSecond />
+        </Section>
+
+        <Section style={{ height: "9.7%" }}>
+          <Sticky className="third" />
+        </Section>
+
+        <Section style={{ height: "10.1%" }}>
+          <Sticky className="fourth" />
+        </Section>
+      </Main>
+    </>
   );
 }
 
